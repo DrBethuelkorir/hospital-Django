@@ -18,9 +18,10 @@ from django.contrib import admin
 from django.urls import path
 from patient import views
 urlpatterns = [
-    path('/index', views.index, name='index'),
+    path('index/', views.index, name='index'),
     path('login/', views.login_user, name='login'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('book_appointment/', views.book_appointment, name='book_appointment'),
     path('profile/', views.profile, name='profile'),
+    path('logout/', views.logout_user, name='logout'),
 ]
