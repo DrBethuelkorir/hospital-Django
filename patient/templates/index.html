@@ -1,13 +1,107 @@
 {% extends 'base.html' %}
 
-{% block title %}Register{% endblock %}
 {% load static %}
+{% block title %}Register - MediCare{% endblock %}
+
 {% block content %}
-    <h2>Register Here </h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Register</button>
-    </form>
-    <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+<style>
+    /* Center the register card on the screen */
+    .register-wrapper {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f4f6f9;
+        padding: 20px;
+    }
+    
+    .register-card {
+        width: 100%;
+        max-width: 450px;
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        background: white;
+        padding: 40px 30px;
+    }
+
+    .register-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .register-header i {
+        font-size: 45px;
+        color: #172b4d; /* Sidebar blue color */
+        margin-bottom: 10px;
+    }
+
+    .register-header h3 {
+        font-weight: bold;
+        color: #172b4d;
+    }
+
+    /* Style the Django {{ form.as_p }} to look like Bootstrap */
+    .register-card form p {
+        margin-bottom: 15px;
+    }
+    
+    .register-card form label {
+        font-weight: 500;
+        color: #64748b;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .register-card form input {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .register-card form input:focus {
+        border-color: #86b7fe;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+
+    /* Hide the help text for password requirements to keep it clean */
+    .register-card form .helptext {
+        font-size: 12px;
+        color: #6c757d;
+        display: block;
+        margin-top: 5px;
+    }
+</style>
+
+<div class="register-wrapper">
+    <div class="card register-card">
+        
+        <div class="register-header">
+            <i class="bi bi-heart-pulse-fill"></i>
+            <h3>Create an Account</h3>
+            <p class="text-muted">Join MediCare today</p>
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+            
+            {{ form.as_p }}
+            
+            <div class="d-grid gap-2 mt-4">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-person-plus me-1"></i> Register
+                </button>
+            </div>
+        </form>
+        
+        <div class="text-center mt-4">
+            <small class="text-muted">Already have an account? <a href="{% url 'login' %}" class="text-decoration-none">Login here</a></small>
+        </div>
+
+    </div>
+</div>
 {% endblock %}
