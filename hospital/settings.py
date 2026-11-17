@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'patient'
+    'django_daraja',
+    'patient',
 ]
 
 MIDDLEWARE = [
@@ -133,4 +134,14 @@ MAILERS = {
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = 'login'
+
+MPESA_ENVIRONMENT = 'sandbox'
+MPESA_CONSUMER_KEY = '6P5CC1YCQUo7fJrc5guoMPNCurZ6zGBXxBUGE5uudQ2W4aP3'
+MPESA_CONSUMER_SECRET = 'Tuul3IuoghOlSSuGGU97ZIYYU0IPL1VUeAerQ1WOpiZQoY7SSOEPmENWJNHv2FtU'
+MPESA_SHORTCODE = '174379'
+MPESA_EXPRESS_SHORTCODE = '174379'
+MPESA_SHORTCODE_TYPE = 'paybill'
+MPESA_PASSKEY = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'
+MPESA_INITIATOR_USERNAME = 'testapi'
+MPESA_INITIATOR_SECURITY_CREDENTIALS = 'Safaricom123!!'
 

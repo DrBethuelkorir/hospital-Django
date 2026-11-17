@@ -32,5 +32,6 @@ urlpatterns = [
     path('add-patient/', views.add_patient, name='add_patient'),
     path('<int:pk>/delete/', views.delete_patient, name='delete_patient'),
     path('<int:pk>/update/', views.update_patient, name='update_patient'),
+    path('make_payments/', views.make_payment, name = 'payment'),
     path('', include(router.urls)),
 ]
